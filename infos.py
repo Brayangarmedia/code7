@@ -14,8 +14,8 @@ def text_progres(index,max):
 		index_make = 1
 		make_text += '\n['
 		while(index_make<21):
-			if porcent >= index_make * 5: make_text+='●'
-			else: make_text+='○'
+			if porcent >= index_make * 5: make_text+='🌕'
+			else: make_text+='🌑'
 			index_make+=1
 		make_text += ']\n'
 		return make_text
@@ -29,12 +29,12 @@ def porcent(index,max):
     return porcent
 
 def createDownloading(filename,totalBits,currentBits,speed,time,tid=''):
-    msg = '📥Descargando... \n\n'
-    msg+= '🔖Nombre: ' + str(filename)+'\n'
+    msg = 'Downloading...📥 \n\n'
+    msg+= '✍️Name: ' + str(filename)+'\n'
     msg+= '🗂Tamaño Total: ' + str(sizeof_fmt(totalBits))+'\n'
-    msg+= '🗂Descargado: ' + str(sizeof_fmt(currentBits))+'\n'
-    msg+= '📶Velocidad: ' + str(sizeof_fmt(speed))+'/s\n'
-    msg+= '🕐Tiempo: ' + str(datetime.timedelta(seconds=int(time))) +'\n\n'
+    msg+= '📥Downloaded: ' + str(sizeof_fmt(currentBits))+'\n'
+    msg+= '⚡Speed: ' + str(sizeof_fmt(speed))+'/s\n'
+    msg+= '⏰ETA: ' + str(datetime.timedelta(seconds=int(time))) +'\n\n'
 
     msg = '📡 Descargando Archivo....\n\n'
     msg += '➤ Archivo: '+filename+'\n'
@@ -49,15 +49,15 @@ def createDownloading(filename,totalBits,currentBits,speed,time,tid=''):
         msg+= '/cancel_' + tid
     return msg
 def createUploading(filename,totalBits,currentBits,speed,time,originalname=''):
-    msg = '⏫Subiendo A La Nube☁... \n\n'
-    msg+= '🔖Nombre: ' + str(filename)+'\n'
+    msg = 'Uploading...📤 \n\n'
+    msg+= '✍️Name: ' + str(filename)+'\n'
     if originalname!='':
         msg = str(msg).replace(filename,originalname)
-        msg+= '⏫Subiendo: ' + str(filename)+'\n'
+        msg+= 'Uploading...📤: ' + str(filename)+'\n'
     msg+= '🗂Tamaño Total: ' + str(sizeof_fmt(totalBits))+'\n'
-    msg+= '🗂Subido: ' + str(sizeof_fmt(currentBits))+'\n'
-    msg+= '📶Velocidad: ' + str(sizeof_fmt(speed))+'/s\n'
-    msg+= '🕐Tiempo: ' + str(datetime.timedelta(seconds=int(time))) +'\n'
+    msg+= '📤Uploaded: ' + str(sizeof_fmt(currentBits))+'\n'
+    msg+= '⚡Speed: ' + str(sizeof_fmt(speed))+'/s\n'
+    msg+= '⏰ETA: ' + str(datetime.timedelta(seconds=int(time))) +'\n'
 
     msg = '⏫ Subiendo A La Nube☁...\n\n'
     msg += '➤ Nombre: '+filename+'\n'
